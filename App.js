@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
     const [enteredText, setEnteredText] = useState('');
@@ -16,7 +16,6 @@ export default function App() {
         });
         setEnteredText('');
     }
-
 
     return (
         <>
@@ -36,7 +35,16 @@ export default function App() {
                     />
                 </View>
                 <View style={styles.goalListContainer}>
-                    <Text>Goal List!!!</Text>
+                    <FlatList
+                        data={goalList}
+                        renderItem={({ item }) => {
+                            return (
+                                <View style={styles.goalItem}>
+                                    <Text style={styles.goalText} key={item}>{item}</Text>
+                                </View>
+                            )
+                        }}
+                    />
                 </View>
             </View>
         </>
@@ -59,7 +67,8 @@ const styles = StyleSheet.create({
     },
     goalListContainer: {
         flex: 6,
-        backgroundColor: '#999898ff'
+        backgroundColor: '#999898ff',
+        paddingTop: 16
     },
     inputText: {
         // borderColor: '#222',
@@ -68,5 +77,16 @@ const styles = StyleSheet.create({
         width: '70%',
         backgroundColor: '#ccc',
         padding: 8
+    },
+    goalItem: {
+        backgroundColor: '#4d6cc2ff',
+        borderWidth: 1,
+        padding: 16,
+        margin: 6,
+        borderRadius: 6
+    }, 
+    goalText: {
+        color: '#dadae0ff',
+        fontSize: 16
     }
 });
