@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, StyleSheet, TextInput, View } from 'react-native';
+import GoalList from './components/goalList.jsx';
 
 export default function App() {
     const [enteredText, setEnteredText] = useState('');
@@ -34,18 +35,7 @@ export default function App() {
                         onPress={addGoalHandler}
                     />
                 </View>
-                <View style={styles.goalListContainer}>
-                    <FlatList
-                        data={goalList}
-                        renderItem={({ item }) => {
-                            return (
-                                <View style={styles.goalItem}>
-                                    <Text style={styles.goalText} key={item}>{item}</Text>
-                                </View>
-                            )
-                        }}
-                    />
-                </View>
+                <GoalList goalList={goalList}/>
             </View>
         </>
     );
@@ -65,11 +55,11 @@ const styles = StyleSheet.create({
         paddingTop: 40,
         paddingHorizontal: 32
     },
-    goalListContainer: {
-        flex: 6,
-        backgroundColor: '#999898ff',
-        paddingTop: 16
-    },
+    // goalListContainer: {
+    //     flex: 6,
+    //     backgroundColor: '#999898ff',
+    //     paddingTop: 16
+    // },
     inputText: {
         // borderColor: '#222',
         borderRadius: 6,
@@ -78,15 +68,15 @@ const styles = StyleSheet.create({
         backgroundColor: '#ccc',
         padding: 8
     },
-    goalItem: {
-        backgroundColor: '#4d6cc2ff',
-        borderWidth: 1,
-        padding: 16,
-        margin: 6,
-        borderRadius: 6
-    }, 
-    goalText: {
-        color: '#dadae0ff',
-        fontSize: 16
-    }
+    // goalItem: {
+    //     backgroundColor: '#4d6cc2ff',
+    //     borderWidth: 1,
+    //     padding: 16,
+    //     margin: 6,
+    //     borderRadius: 6
+    // }, 
+    // goalText: {
+    //     color: '#dadae0ff',
+    //     fontSize: 16
+    // }
 });
