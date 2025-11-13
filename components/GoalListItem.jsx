@@ -5,7 +5,7 @@ export default function GoalListItem({
 }) {
     return (
         <View style={styles.goalItem}>
-            <Text style={styles.goalText} key={goal}>{goal}</Text>
+            <Text style={styles.goalText} >{goal}</Text>
         </View>
     );
 };

@@ -8,7 +8,8 @@ export default function GoalList({
         <View style={styles.goalListContainer}>
             <FlatList
                 data={goalList}
-                renderItem={({ item }) => <GoalListItem goal={item}/>}
+                renderItem={({ item }) => <GoalListItem goal={item.text}/>}
+                keyExtractor={item => item.id.toString()}
             />
         </View>
     );

@@ -19,7 +19,7 @@ export default function App() {
         }
 
         const existingGoal = goalList.find(
-            goal => goal.toLowerCase() === enteredText.trim().toLowerCase()
+            goal => goal.text.toLowerCase() === enteredText.trim().toLowerCase()
         );
 
         if (existingGoal) {
@@ -27,7 +27,10 @@ export default function App() {
         }
 
         setGoalList(state => {
-            return [...state, enteredText.trim()];
+            return [
+                ...state,
+                { id: Math.random(), text: enteredText.trim() }
+            ];
         });
         setEnteredText('');
         setIsModalVisible(false);
