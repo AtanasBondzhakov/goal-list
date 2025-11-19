@@ -36,6 +36,10 @@ export default function App() {
         setIsModalVisible(false);
     }
 
+    const deleteGoalHandler = (goalId) => {
+        setGoalList(prevState => prevState.filter(goal => goal.id !== goalId))
+    }
+
     const toggleModalVisibility = () => {
         setIsModalVisible(state => !state);
         setEnteredText('');
@@ -59,7 +63,7 @@ export default function App() {
                     onCancel={toggleModalVisibility}
                     onAdd={addGoalHandler}
                 />
-                <GoalList goalList={goalList} />
+                <GoalList goalList={goalList} onDelete={deleteGoalHandler} />
             </View>
         </>
     );

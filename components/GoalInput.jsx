@@ -36,7 +36,7 @@ export default function GoalInput({
 const styles = StyleSheet.create({
     inputContainer: {
         flex: 1,
-        backgroundColor: '#293a9cff',
+        backgroundColor: '#2d0e9c',
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingTop: 40,
@@ -52,8 +52,9 @@ const styles = StyleSheet.create({
     inputText: {
         borderRadius: 6,
         borderWidth: 1,
-        width: '70%',
-        backgroundColor: '#ccc',
-        padding: 8
+        width: '80%',
+        backgroundColor: '#cccccc',
+        padding: 10,
+        fontSize: 18
     }
 })
