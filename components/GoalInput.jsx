@@ -1,4 +1,4 @@
-import { Button, Modal, StyleSheet, TextInput, View } from "react-native";
+import { Button, Modal, StyleSheet, TextInput, View, Image } from "react-native";
 
 export default function GoalInput({
     visible,
@@ -10,6 +10,7 @@ export default function GoalInput({
     return (
         <Modal visible={visible}>
             <View style={styles.inputContainer}>
+                <Image style={styles.image} source={require('../assets/images/goal.png')} />
                 <TextInput
                     style={styles.inputText}
                     placeholder='Your new goal!'
@@ -37,9 +38,7 @@ const styles = StyleSheet.create({
     inputContainer: {
         flex: 1,
         backgroundColor: '#2d0e9c',
-        justifyContent: 'space-between',
         alignItems: 'center',
-        paddingTop: 40,
         paddingHorizontal: 32,
         justifyContent: 'center'
     },
@@ -56,5 +55,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#cccccc',
         padding: 10,
         fontSize: 18
+    },
+    image: {
+        width: 80,
+        height: 80,
+        marginBottom: 16
     }
 })
