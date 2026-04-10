@@ -1,4 +1,13 @@
-import { Button, Modal, StyleSheet, TextInput, View, Image } from "react-native";
+import {
+    Button,
+    Modal,
+    StyleSheet,
+    TextInput,
+    View,
+    Image,
+    Keyboard,
+    TouchableWithoutFeedback
+} from "react-native";
 
 export default function GoalInput({
     visible,
@@ -9,27 +18,29 @@ export default function GoalInput({
 }) {
     return (
         <Modal visible={visible}>
-            <View style={styles.inputContainer}>
-                <Image style={styles.image} source={require('../assets/images/goal.png')} />
-                <TextInput
-                    style={styles.inputText}
-                    placeholder='Your new goal!'
-                    onChangeText={inputTextHandler}
-                    value={enteredText}
-                />
-                <View style={styles.button}>
-                    <Button
-                        title='Cancel'
-                        color='#fff'
-                        onPress={onCancel}
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <View style={styles.inputContainer}>
+                    <Image style={styles.image} source={require('../assets/images/goal.png')} />
+                    <TextInput
+                        style={styles.inputText}
+                        placeholder='Your new goal!'
+                        onChangeText={inputTextHandler}
+                        value={enteredText}
                     />
-                    <Button
-                        title='Add Goal'
-                        color='#fff'
-                        onPress={onAdd}
-                    />
+                    <View style={styles.button}>
+                        <Button
+                            title='Cancel'
+                            color='#fff'
+                            onPress={onCancel}
+                        />
+                        <Button
+                            title='Add Goal'
+                            color='#fff'
+                            onPress={onAdd}
+                        />
+                    </View>
                 </View>
-            </View>
+            </TouchableWithoutFeedback>
         </Modal>
     );
 };
