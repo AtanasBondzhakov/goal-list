@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import GoalListItem from "./GoalListItem.jsx";
 
 export default function GoalList({
@@ -25,6 +25,6 @@ export default function GoalList({
 const styles = StyleSheet.create({
     goalListContainer: {
         flex: 6,
-        backgroundColor: '#999898ff'
+        backgroundColor: '#2d0e9c'
     }
 })

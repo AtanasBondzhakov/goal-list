@@ -72,10 +72,11 @@ export default function App() {
 const styles = StyleSheet.create({
     appContainer: {
         flex: 1,
-        backgroundColor: '#cccccc'
+        backgroundColor: '#2d0e9c'
     },
     initialScreenContainer: {
-        paddingTop: 150,
-        backgroundColor: '#503535ff'
+        paddingTop: 30,
+        marginVertical: 8,
+        backgroundColor: '#2d0e9c'
     }
 });
